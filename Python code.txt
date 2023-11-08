@@ -1,0 +1,18 @@
+import pandas as pd
+from scipy.spatial import distance_matrix
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.cluster.hierarchy import dendrogram, linkage
+
+
+x=[2.03, -0.64, -0.42, -0.36, 1.14]
+y=[0.06, -0.10, -0.53, 0.07, 0.37]
+
+data = list(zip(x, y))
+
+pd.DataFrame(distance_matrix(data, data))
+
+linkage_data = linkage(data, method='ward', metric='euclidean')
+dendrogram(linkage_data)
+
+plt.show()
