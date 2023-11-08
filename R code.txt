@@ -1,0 +1,43 @@
+X <- matrix(c(2.03, 0.06, -0.64, -0.10, -0.42, -0.53, -0.36, 0.07, 1.14, 0.37),
+            nrow = 5, byrow = TRUE)
+X
+d <- round(dist(X),3)
+d
+# Hierarchical clustering: single linkage
+hclusts <- hclust(d, method = "single")
+hclusts$height
+plot(hclusts)
+rect.hclust(hclusts,
+            k = 2, # k is used to specify the number of clusters
+            border = "blue"
+)
+
+
+X <- matrix(c(2.03, 0.06, -0.64, -0.10, -0.42, -0.53, -0.36, 0.07, 1.14, 0.37),
+            nrow = 5, byrow = TRUE)
+X
+d <- round(dist(X),3)
+d
+# Hierarchical clustering: single linkage
+hclustc <- hclust(d, method = "complete")
+hclustc$height
+plot(hclustc)
+rect.hclust(hclustc,
+            k = 2, # k is used to specify the number of clusters
+            border = "blue"
+)
+
+
+X <- matrix(c(2.03, 0.06, -0.64, -0.10, -0.42, -0.53, -0.36, 0.07, 1.14, 0.37),
+            nrow = 5, byrow = TRUE)
+X
+d <- round(dist(X),3)
+d
+# Hierarchical clustering: single linkage
+hclusta <- hclust(d, method = "average")
+round(hclusta$height, 3)
+plot(hclusta)
+rect.hclust(hclusta,
+            k = 2, # k is used to specify the number of clusters
+            border = "blue"
+)
